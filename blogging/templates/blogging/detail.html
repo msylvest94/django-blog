@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ object.title }}</h1>
+<div class="post-published">
+    Date Posted: {{ object.published_date }}
+</div>
+<div class="post-body">
+    {{ object.text }}
+</div>
+{% endblock %}
