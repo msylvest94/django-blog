@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from blogging.models import Post
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from forms import PostForm
+from .forms import PostForm
 from datetime import date
 
 
