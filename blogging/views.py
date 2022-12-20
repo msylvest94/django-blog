@@ -12,13 +12,22 @@ from django.views.generic.detail import DetailView
 #    context = {'posts': posts}
 #    return render(request, 'blogging/list.html', context)
 
+#def detail_view(request, post_id):
+#    published = Post.objects.exclude(published_date__exact=None)
+#    try:
+#        post = published.get(pk=post_id)
+#    except Post.DoesNotExist:
+#        raise Http404
+#    context = {'post': post}
+#    return render(request, 'blogging/detail.html', context)
 
 class PostListView(ListView):
     queryset = Post.objects.exclude(published_date__isnull=True).order_by('published_date')
     template_name = 'blogging/list.html'
 
+
 class PostDetailView(DetailView):
-    model = Post
+    queryset = Post.objects.exclude(published_date__isnull=True)
     template_name = 'blogging/detail.html'
 
 
