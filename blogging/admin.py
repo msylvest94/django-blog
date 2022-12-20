@@ -3,7 +3,7 @@ from blogging.models import Post, Category
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
 
 
 class CategoryInline(admin.StackedInline):
@@ -18,5 +18,3 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
-
-
