@@ -16,8 +16,15 @@
        <li><a href="{% url 'login' %}">login</a></li>
      {% endif %}
      </ul>
+
     </div>
     <div id="container">
+        {% load socialaccount %}
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }} !!!</p>
+    {% else %}
+    <a href="{% provider_login_url 'github' %}">Sign Up</a>
+    {% endif %}
       <div id="content">
       {% block content %}
        [content will go here]
