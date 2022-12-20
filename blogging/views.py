@@ -13,10 +13,10 @@ def add_model(request):
             post = form.save(commit=False)
             post.published_date = date.today()
             post.save()
-            return redirect('blog_detail', pk=post.pk)
+            return redirect("blog_detail", pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'blogging/add.html', {'form': form})
+    return render(request, "blogging/add.html", {"form": form})
 
 
 class PostListView(ListView):
